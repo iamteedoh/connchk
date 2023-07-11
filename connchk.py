@@ -17,17 +17,21 @@ def check_connection(host_port_pairs):
 
 def main():
     input_method = input("Do you want to input hosts from command line arguments (c) or from a file (f)? ")
+    ports_input = input("Enter the ports for all hosts (comma-separated): ")
+    ports = [port.strip() for port in ports_input.split(",")]
     host_ports = []
-    port = input("Enter the port for all hosts: ")
+    
     if input_method == 'c':
         for host in sys.argv[1:]:
-            host_ports.append((host, port))
+            for port in ports:
+                host_ports.append((host, port))
     elif input_method == 'f':
         try:
             with open(sys.argv[1], 'r') as file:
                 for host in file:
                     host = host.strip()
-                    host_ports.append((host, port))
+                    for port in ports:
+                        host_ports.append((host, port))
         except IndexError:
             print("Please supply a filename as a command line argument.")
         except FileNotFoundError:
