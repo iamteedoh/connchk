@@ -1,4 +1,6 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 import os
+import socket
 import sys
 import paramiko
 from getpass import getpass
@@ -24,7 +26,6 @@ def main():
         password = getpass("Enter your password: ")  # Use getpass to securely get the password
         host = input("Enter the remote host IP: ")
 
-        key = paramiko.RSAKey(filename="~/.ssh/id_rsa")  # Replace with your private key path
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # Auto add host key. Be careful with this in real scenarios. You don't want to blindly add hosts keys of systems you don't recognize onto your local system.
         ssh.connect(host, username=username, password=password)

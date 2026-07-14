@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 import socket
 import sys
 from colorama import Fore, Style, init
