@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/iamteedoh/connchk/compare/v0.1.0...v0.2.0) (2026-07-16)
+
+
+### Features
+
+* add title banner, CLI flags, and non-interactive mode to the port checker ([#6](https://github.com/iamteedoh/connchk/issues/6)) ([1ad006c](https://github.com/iamteedoh/connchk/commit/1ad006c05ea0681066b75df05f7827c59a935442))
+
 ## 0.1.0 (2026-07-14)
 
 
